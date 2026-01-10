@@ -1,5 +1,5 @@
 {
-	"name": "fastapi-worker",
+	"name": "streak-fastapi",
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
