@@ -11,3 +11,4 @@ wheels/
 
 .vscode/
 node_modules
+python_modules

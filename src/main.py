@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse, JSONResponse
 import requests
 from dataclasses import dataclass
+from workers import WorkerEntrypoint,  Response
 
 from services import fetch_userdata, get_user_streak, simplify_user_data
 
@@ -32,3 +33,7 @@ def read_streak(username: str):
         else:
             return JSONResponse(status_code=404, content={"error": "User with username '" + username + "' not found"})
     return JSONResponse(status_code=500, content={"error": response.error})
+
+class Default(WorkerEntrypoint):
+    async def fetch(self, request):
+        return Response("Haiii! Cloudflare ")
