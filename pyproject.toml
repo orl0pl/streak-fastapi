@@ -1,17 +1,18 @@
 [project]
-name = "streak-fastapi"
+name = "fastapi-worker"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python fastapi example"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.104.0",
-    "uvicorn[standard]>=0.24.0"
+    "webtypy>=0.1.7",
+    "fastapi",
+    "markupsafe",
+    "jinja2",
 ]
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-py-modules = ["main", "services", "models"]
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk"
+]
